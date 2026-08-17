@@ -17,8 +17,3 @@ jobs:
 
       - name: Run tests
         run: npm run test
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: frontend-build
