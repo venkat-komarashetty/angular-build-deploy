@@ -28,3 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: frontend-build
+          path: dist/angular-build-deploy
