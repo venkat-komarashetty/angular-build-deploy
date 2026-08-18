@@ -1,5 +1,5 @@
 name: Frontend Build
-on: push:
+on: push
   branches:
     - main
 jobs:
