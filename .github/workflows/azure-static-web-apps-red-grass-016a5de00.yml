@@ -52,8 +52,13 @@ jobs:
             exit 1
           else
             echo "✅ The token is present."
-          fi     
+          fi
 
+      - name: Verify Artifact Structure
+        run: |
+          echo "Checking contents of dist/angular-build-deploy/browser:"
+          ls -la dist/angular-build-deploy/browser || echo "Directory does not exist!"
+          
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
         env:
