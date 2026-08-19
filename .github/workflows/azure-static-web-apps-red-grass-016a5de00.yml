@@ -45,6 +45,15 @@ jobs:
           name: frontend-build
           path: dist/angular-build-deploy
 
+      - name: Check if token is populated
+        run: |
+          if [ -z "${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}" ]; then
+            echo "❌ The token is EMPTY! GitHub is not passing the secret to the runner."
+            exit 1
+          else
+            echo "✅ The token is present."
+          fi     
+
       - name: Deploy to Azure Static Web App
         uses: Azure/static-web-apps-deploy@v1
         with:
